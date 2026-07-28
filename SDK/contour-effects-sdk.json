@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "sdk": {
+    "name": "ContourEffects",
+    "apiVersion": "1.0",
+    "distributionVersion": "0.1.0-preview.1",
+    "minimumMacOS": "14.0",
+    "supportedArchitectures": [
+      "arm64"
+    ],
+    "repository": null,
+    "swiftPMRemoteIdentity": null,
+    "localPackageAlias": "ContourEffectsSDK",
+    "releaseTag": null,
+    "distributionStatus": "internal-preview",
+    "firstPartyLicense": {
+      "spdxExpression": "BSD-3-Clause",
+      "copyrightText": "Copyright (c) 2026 Daito Manabe.",
+      "licensePath": "LICENSE",
+      "scopePath": "SDK/SCOPE.md",
+      "scopePolicy": "closed-whitelist-with-spdx-headers",
+      "unlistedRepositoryFilesLicensed": false,
+      "attributionPath": "SDK/ATTRIBUTION.md",
+      "sha256": "a90bf06c3d04f38ff28d1fb69bc06c491eb3029af02476b31063e6654d727b50",
+      "commercialUsePermitted": true,
+      "redistributionNoticeRequired": true,
+      "suggestedCredit": "ContourEffects SDK — Copyright (c) 2026 Daito Manabe — BSD-3-Clause"
+    }
+  },
+  "products": [
+    {
+      "name": "ContourEffectsCore",
+      "declaredLicense": "BSD-3-Clause",
+      "sourceRoots": [
+        "Sources/ContourEffectsCore"
+      ],
+      "systemDependencies": [
+        "Foundation"
+      ],
+      "thirdPartyDependencies": []
+    },
+    {
+      "name": "ContourEffectsMetal",
+      "declaredLicense": "BSD-3-Clause",
+      "sourceRoots": [
+        "Sources/ContourEffectsMetal"
+      ],
+      "systemDependencies": [
+        "Foundation",
+        "Metal"
+      ],
+      "thirdPartyDependencies": []
+    }
+  ],
+  "effects": [
+    {
+      "identifier": "ws.daito.contour-effects.color.final-grade",
+      "product": "ContourEffectsMetal",
+      "status": "available",
+      "workingPixelFormat": "rgba16Float",
+      "outputTransfer": "display-referred-clamped-0-to-1"
+    }
+  ],
+  "documentation": {
+    "quickStart": "docs/CONTOUR_EFFECTS_SDK.md",
+    "apiManual": "docs/CONTOUR_EFFECTS_API.md",
+    "coreDocCCatalog": "Sources/ContourEffectsCore/ContourEffectsCore.docc",
+    "metalDocCCatalog": "Sources/ContourEffectsMetal/ContourEffectsMetal.docc",
+    "optionalDependencies": "docs/CONTOUR_EFFECTS_THIRD_PARTY.md"
+  },
+  "examples": [
+    {
+      "name": "MinimalContourEffectsHost",
+      "packagePath": "Examples/MinimalContourEffectsHost",
+      "executables": [
+        "MinimalContourEffectsHost"
+      ]
+    },
+    {
+      "name": "ContourEffectsExamples",
+      "packagePath": "Examples/ContourEffectsExamples",
+      "executables": [
+        "ContourEffectsCatalogStateExample",
+        "ContourEffectsLUTRenderExample",
+        "ContourEffectsAnalysisMaskExample",
+        "ContourEffectsAudioMacroReactiveExample",
+        "ContourEffectsGraphLifecycleExample",
+        "ContourEffectsEdgeFlowWarpExample",
+        "ContourEffectsColorLookGalleryExample",
+        "ContourEffectsLiveInputsExample"
+      ]
+    }
+  ],
+  "optionalHostDependencies": [
+    {
+      "id": "appleVision",
+      "name": "Apple Vision",
+      "distribution": "system-framework",
+      "license": "Apple SDK Agreement",
+      "bundled": false,
+      "requiredByCurrentCatalog": false,
+      "normative": false,
+      "requiredBySDKProducts": []
+    },
+    {
+      "id": "appleCoreML",
+      "name": "Apple Core ML",
+      "distribution": "system-framework",
+      "license": "Apple SDK Agreement",
+      "bundled": false,
+      "requiredByCurrentCatalog": false,
+      "normative": false,
+      "requiredBySDKProducts": []
+    },
+    {
+      "id": "yoloV3TinyCoreML",
+      "name": "YOLOv3 Tiny Int8 LUT",
+      "distribution": "model-resource",
+      "source": "https://ml-assets.apple.com/coreml/models/Image/ObjectDetection/YOLOv3Tiny/YOLOv3TinyInt8LUT.mlmodel",
+      "sourceRevision": null,
+      "sha256": "cde8af2528d6eca1d1580fdd0f0147cb6613d40ba962656b5f683c65f571870e",
+      "license": "YOLO License v2; Darknet public domain",
+      "bundled": false,
+      "requiredByCurrentCatalog": false,
+      "normative": false,
+      "requiredBySDKProducts": []
+    },
+    {
+      "id": "depthAnythingV2SmallCoreML",
+      "name": "Depth Anything V2 Small Float16",
+      "distribution": "model-resource",
+      "source": "https://huggingface.co/apple/coreml-depth-anything-v2-small",
+      "sourceRevision": "cfef6f6f2a70783dedc0bfae40cecbc2052285d3",
+      "payloadHashes": {
+        "Manifest.json": "2883ae290c48fe916dc5ececac03a7d847fa277165a49ef5652fa1d2b9cb55f7",
+        "Data/com.apple.CoreML/model.mlmodel": "44ac97a3efcfd52113183fb2862ff59cd0368e9ec2e30a90a54980dd11407042",
+        "Data/com.apple.CoreML/weights/weight.bin": "fa60d9b6a155734f59029ebb882fd54e549bfaee3539c1a9cbd2cbbab64a0fed"
+      },
+      "license": "Apache-2.0 for the Small model",
+      "bundled": false,
+      "requiredByCurrentCatalog": false,
+      "normative": false,
+      "requiredBySDKProducts": []
+    },
+    {
+      "id": "glicMetal",
+      "name": "GLIC Metal",
+      "distribution": "xcframework-and-resource-bundle",
+      "source": "https://github.com/daitomanabe/glic-metal.git",
+      "sourceRevision": "87f236bbdffb6538294ed7d049f6834f948dadbe",
+      "license": "MIT",
+      "bundled": false,
+      "requiredByCurrentCatalog": false,
+      "normative": false,
+      "requiredBySDKProducts": []
+    },
+    {
+      "id": "syphon",
+      "name": "Official Syphon.framework",
+      "distribution": "embedded-framework",
+      "source": "https://github.com/Syphon/Syphon-Framework.git",
+      "sourceRevision": null,
+      "installationSourceRevision": "71351d4b484cd2d1917867f7846a5cdca724552d",
+      "verifiedCleanBuild": {
+        "sourceRevision": "71351d4b484cd2d1917867f7846a5cdca724552d",
+        "xcodeVersion": "26.6",
+        "xcodeBuild": "17F113",
+        "codeSigningAllowed": false,
+        "bundleIdentifier": "info.v002.Syphon",
+        "bundleShortVersion": "5",
+        "architectures": [
+          "arm64",
+          "x86_64"
+        ],
+        "sha256": "95806399bc0e45f374f3fbda39e060afa06062371bde31ab8859d8d96b99a06d"
+      },
+      "license": "BSD-3-Clause",
+      "licensePath": "ThirdPartyNotices/Syphon-License.txt",
+      "bundled": false,
+      "requiredByCurrentCatalog": false,
+      "normative": false,
+      "requiredBySDKProducts": [],
+      "pinStatus": "pinned-upstream-source-and-clean-build-verified; release-artifact-selection-pending"
+    }
+  ],
+  "releaseBlockers": [
+    "Configure a Git remote and release tag before remote SwiftPM installation."
+  ]
+}
