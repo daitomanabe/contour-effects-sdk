@@ -8,20 +8,20 @@
     "supportedArchitectures": [
       "arm64"
     ],
-    "repository": null,
-    "swiftPMRemoteIdentity": null,
+    "repository": "https://github.com/daitomanabe/contour-effects-sdk.git",
+    "swiftPMRemoteIdentity": "contour-effects-sdk",
     "localPackageAlias": "ContourEffectsSDK",
     "releaseTag": null,
-    "distributionStatus": "internal-preview",
+    "distributionStatus": "public-source-preview",
     "firstPartyLicense": {
       "spdxExpression": "BSD-3-Clause",
-      "copyrightText": "Copyright (c) 2026 Daito Manabe.",
+      "copyrightText": "Copyright (c) 2026 Daito Manabe",
       "licensePath": "LICENSE",
       "scopePath": "SDK/SCOPE.md",
       "scopePolicy": "closed-whitelist-with-spdx-headers",
       "unlistedRepositoryFilesLicensed": false,
       "attributionPath": "SDK/ATTRIBUTION.md",
-      "sha256": "a90bf06c3d04f38ff28d1fb69bc06c491eb3029af02476b31063e6654d727b50",
+      "sha256": "eab08c648f647e0f64f60d950dd4f10b8c3a65f0bf23b3990040d64b7306ab97",
       "commercialUsePermitted": true,
       "redistributionNoticeRequired": true,
       "suggestedCredit": "ContourEffects SDK — Copyright (c) 2026 Daito Manabe — BSD-3-Clause"
@@ -184,6 +184,6 @@
     }
   ],
   "releaseBlockers": [
-    "Configure a Git remote and release tag before remote SwiftPM installation."
+    "Create and validate a release tag before versioned SwiftPM installation."
   ]
 }

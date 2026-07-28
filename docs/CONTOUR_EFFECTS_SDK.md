@@ -14,7 +14,7 @@ not an Intel build or a tagged public binary release:
 - first migrated effect:
   `ws.daito.contour-effects.color.final-grade`
 - first-party license: `BSD-3-Clause`
-- copyright: `Copyright (c) 2026 Daito Manabe.`
+- copyright: `Copyright (c) 2026 Daito Manabe`
 
 Commercial use, modification, and redistribution are permitted. Source and
 binary redistribution must retain the required copyright and complete license
@@ -41,10 +41,39 @@ licenses.
 
 ## Install in three steps
 
-### 1. Add the local package
+### 1. Add the package
 
-In Xcode use **File > Add Package Dependencies > Add Local** and choose this
-repository. Select both library products:
+For the public source preview:
+
+```swift
+dependencies: [
+    .package(
+        url: "https://github.com/daitomanabe/contour-effects-sdk.git",
+        branch: "main"
+    ),
+],
+targets: [
+    .executableTarget(
+        name: "MyVJHost",
+        dependencies: [
+            .product(
+                name: "ContourEffectsCore",
+                package: "contour-effects-sdk"
+            ),
+            .product(
+                name: "ContourEffectsMetal",
+                package: "contour-effects-sdk"
+            ),
+        ]
+    ),
+]
+```
+
+There is not yet a stable release tag. Pin an exact revision when a host needs
+a reproducible preview dependency.
+
+For local development, use **File > Add Package Dependencies > Add Local** and
+choose this repository. Select both library products:
 
 - `ContourEffectsCore`
 - `ContourEffectsMetal`
@@ -75,10 +104,8 @@ targets: [
 ]
 ```
 
-The explicit local alias keeps the dependency independent of the checkout
-folder name. This repository does not yet have a Git remote or release tag, so
-local path installation is the only supported reproducible route. Add a remote
-URL example only after that repository and tag actually exist.
+The explicit local alias keeps a local dependency independent of the checkout
+folder name.
 
 ### 2. Import and construct an effect
 
@@ -139,7 +166,7 @@ distributed documentation, or product bundle. A convenient visible credit is:
 
 ```text
 ContourEffects SDK
-Copyright (c) 2026 Daito Manabe.
+Copyright (c) 2026 Daito Manabe
 Licensed under the BSD 3-Clause License.
 ```
 

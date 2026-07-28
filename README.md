@@ -25,10 +25,39 @@ Current preview support:
 Neither product links GLIC, Syphon, Vision, Core ML, YOLO, or Depth Anything.
 Those remain optional host capabilities.
 
-## Add the local package
+## Add the package
 
-In Xcode, choose **File > Add Package Dependencies > Add Local** and select
-this repository. For another local Swift package:
+For the public source preview, add the GitHub package:
+
+```swift
+dependencies: [
+    .package(
+        url: "https://github.com/daitomanabe/contour-effects-sdk.git",
+        branch: "main"
+    ),
+],
+targets: [
+    .executableTarget(
+        name: "MyVJHost",
+        dependencies: [
+            .product(
+                name: "ContourEffectsCore",
+                package: "contour-effects-sdk"
+            ),
+            .product(
+                name: "ContourEffectsMetal",
+                package: "contour-effects-sdk"
+            ),
+        ]
+    ),
+]
+```
+
+There is not yet a stable release tag. Pin an exact revision when a host needs
+a reproducible preview dependency.
+
+For local development, choose **File > Add Package Dependencies > Add Local**
+in Xcode and select this repository. For another local Swift package:
 
 ```swift
 dependencies: [
@@ -53,9 +82,6 @@ targets: [
     ),
 ]
 ```
-
-The repository has no Git remote or release tag yet. Local path installation is
-the supported reproducible setup until a remote release is configured.
 
 ## Verify
 

@@ -16,11 +16,11 @@ trap 'rm -rf "$SCRATCH"' EXIT
 FORBIDDEN_PATTERN='-lglic_metal|-framework Syphon|-framework Vision|-framework CoreML|-module-name ContourFlow|Sources/ContourFlow/|glic-metal/(include|build)|Syphon\.framework|GlicMetal\.xcframework|GlicMetalResources\.bundle|/\.codex/shared/syphon'
 LICENSE_FILE="LICENSE"
 MANIFEST_FILE="SDK/contour-effects-sdk.json"
-CANONICAL_LICENSE_SHA="a90bf06c3d04f38ff28d1fb69bc06c491eb3029af02476b31063e6654d727b50"
+CANONICAL_LICENSE_SHA="eab08c648f647e0f64f60d950dd4f10b8c3a65f0bf23b3990040d64b7306ab97"
 
 echo "== SDK license and scope =="
 [[ "$(head -n 1 "$LICENSE_FILE")" == \
-  "Copyright (c) 2026 Daito Manabe." ]] || {
+  "Copyright (c) 2026 Daito Manabe" ]] || {
   echo "error: unexpected ContourEffects copyright holder" >&2
   exit 1
 }
@@ -45,8 +45,8 @@ echo "== SDK license and scope =="
   exit 1
 }
 jq -e \
-  '.sdk.repository == null
-    and .sdk.swiftPMRemoteIdentity == null
+  '.sdk.repository == "https://github.com/daitomanabe/contour-effects-sdk.git"
+    and .sdk.swiftPMRemoteIdentity == "contour-effects-sdk"
     and .sdk.localPackageAlias == "ContourEffectsSDK"' \
   "$MANIFEST_FILE" > /dev/null || {
   echo "error: standalone SDK repository identity contract is invalid" >&2
