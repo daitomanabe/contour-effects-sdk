@@ -35,6 +35,8 @@ licenses.
   [`Examples/ContourEffectsExamples`](../Examples/ContourEffectsExamples).
 - Optional Vision, Core ML, model, GLIC, and Syphon adapters:
   [CONTOUR_EFFECTS_THIRD_PARTY.md](CONTOUR_EFFECTS_THIRD_PARTY.md).
+- Original ContourFlow effects, required inputs, and migration status:
+  [CONTOUR_EFFECTS_ORIGINAL_CATALOG.md](CONTOUR_EFFECTS_ORIGINAL_CATALOG.md).
 - License boundary and redistribution:
   [`SDK/SCOPE.md`](../SDK/SCOPE.md) and
   [`SDK/ATTRIBUTION.md`](../SDK/ATTRIBUTION.md).
@@ -341,6 +343,10 @@ The public effect surface is the set of entries returned by
 `ContourEffectsMetalCatalog`. The current preview exposes Final Color Grade /
 Film Finish. Host-only effects and arbitrary presets are not implicitly part of
 the SDK API.
+
+The original ContourFlow effects that are not yet migrated, their required
+inputs, and the SDK gaps they expose are listed in
+[CONTOUR_EFFECTS_ORIGINAL_CATALOG.md](CONTOUR_EFFECTS_ORIGINAL_CATALOG.md).
 
 The machine-readable distribution and dependency state is
 [`SDK/contour-effects-sdk.json`](../SDK/contour-effects-sdk.json).

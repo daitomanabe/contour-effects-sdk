@@ -98,6 +98,7 @@ checks that optional host dependencies did not enter the SDK target closure.
 - [Installation and render contract](docs/CONTOUR_EFFECTS_SDK.md)
 - [API and major classes](docs/CONTOUR_EFFECTS_API.md)
 - [Optional host dependencies](docs/CONTOUR_EFFECTS_THIRD_PARTY.md)
+- [Original ContourFlow effects and migration status](docs/CONTOUR_EFFECTS_ORIGINAL_CATALOG.md)
 - [Eight executable examples](Examples/ContourEffectsExamples/README.md)
 - [Minimal Metal host](Examples/MinimalContourEffectsHost/README.md)
 - [Machine-readable manifest](SDK/contour-effects-sdk.json)

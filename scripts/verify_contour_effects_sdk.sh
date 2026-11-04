@@ -77,7 +77,8 @@ for required_path in \
     exit 1
   }
 done
-for documentation_key in quickStart apiManual optionalDependencies; do
+for documentation_key in quickStart apiManual optionalDependencies \
+    originalCatalog; do
   documentation_path="$(plutil -extract documentation.$documentation_key raw \
     "$MANIFEST_FILE")"
   [[ -f "$documentation_path" ]] || {
@@ -150,6 +151,7 @@ LICENSED_HEADER_FILES=(
   README.md
   ThirdPartyNotices/README.md
   docs/CONTOUR_EFFECTS_API.md
+  docs/CONTOUR_EFFECTS_ORIGINAL_CATALOG.md
   docs/CONTOUR_EFFECTS_SDK.md
   docs/CONTOUR_EFFECTS_THIRD_PARTY.md
   SDK/ATTRIBUTION.md
@@ -188,6 +190,7 @@ while IFS= read -r -d '' file; do
       README.md | \
       ThirdPartyNotices/README.md | \
       docs/CONTOUR_EFFECTS_API.md | \
+      docs/CONTOUR_EFFECTS_ORIGINAL_CATALOG.md | \
       docs/CONTOUR_EFFECTS_SDK.md | \
       docs/CONTOUR_EFFECTS_THIRD_PARTY.md | \
       SDK/ATTRIBUTION.md | \

@@ -66,7 +66,8 @@
     "apiManual": "docs/CONTOUR_EFFECTS_API.md",
     "coreDocCCatalog": "Sources/ContourEffectsCore/ContourEffectsCore.docc",
     "metalDocCCatalog": "Sources/ContourEffectsMetal/ContourEffectsMetal.docc",
-    "optionalDependencies": "docs/CONTOUR_EFFECTS_THIRD_PARTY.md"
+    "optionalDependencies": "docs/CONTOUR_EFFECTS_THIRD_PARTY.md",
+    "originalCatalog": "docs/CONTOUR_EFFECTS_ORIGINAL_CATALOG.md"
   },
   "examples": [
     {

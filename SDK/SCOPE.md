@@ -29,6 +29,7 @@ The following first-party files are covered by the
 - files carrying both ContourEffects BSD SPDX headers under
   `Examples/ContourEffectsExamples/**`, excluding generated `.build/**`;
 - `docs/CONTOUR_EFFECTS_API.md`;
+- `docs/CONTOUR_EFFECTS_ORIGINAL_CATALOG.md`;
 - `docs/CONTOUR_EFFECTS_SDK.md`;
 - `docs/CONTOUR_EFFECTS_THIRD_PARTY.md`;
 - `scripts/verify_contour_effects_sdk.sh`; and
