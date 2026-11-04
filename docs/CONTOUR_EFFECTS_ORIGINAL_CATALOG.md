@@ -6,7 +6,7 @@
 ## Status
 
 ContourFlow, the VJ application this SDK was extracted from, renders
-216 effect variants in 20 groups plus six supporting modules. The SDK
+221 effect variants in 20 groups plus six supporting modules. The SDK
 currently exposes one of them: Final Color Grade / Film Finish
 (`ws.daito.contour-effects.color.final-grade`). Everything else below is
 **not part of the SDK API** until it is migrated and returned by
@@ -40,13 +40,13 @@ The category column uses `EffectCategory` cases. Input names are
 | Object detection overlay | 3 | `analysis` | `detections` | not migrated |
 | Depth overlay | 15 | `threeDimensional` | `depth` | not migrated |
 | Person cutout | 4 | `compositing` | `personMask`, `detections`, `depth`, `handLandmarks` | not migrated |
-| MECHA 3D model | 6 | `threeDimensional` | mesh asset (gap 4), `audio`, `rawCamera` | not migrated |
+| MECHA 3D model | 5 | `threeDimensional` | mesh asset (gap 4), `audio`, `rawCamera` | not migrated |
 | MECHA material FX | 6 | `threeDimensional` | `rawCamera` | not migrated |
 | Post FX | 31 | `distortion`, `glitch` | per effect: effect-owned history, `opticalFlow`, `edge`, `personMask`, `handLandmarks`, `depth` | not migrated |
 | Depth fragment style | 8 | `distortion` | `depth` | not migrated |
 | Liquid glass lens shape | 3 | `distortion` | `source` | not migrated |
 | Optical camouflage style | 54 | `fluid`, `reactionDiffusion`, `compositing` | `personMask`, `opticalFlow`; per style `depth`, `handLandmarks`, `bodyLandmarks`; effect-owned 480x270 simulation state (gap 2) | not migrated |
-| Adopted silhouette variant | 5 | `fluid`, `compositing` | as optical camouflage | not migrated |
+| Adopted silhouette mode | 11 | `fluid`, `compositing` | as optical camouflage; modes beyond each body's default | not migrated |
 | GLIC Metal family | 9 | `glitch` | GLIC Metal host capability (gap 5) | host-only |
 | Effect area | 5 | `utility` | `personMask`, `silhouetteContour`, `edge` | not migrated |
 | Final color grade look | 8 | `color` | `source`; optional 3D LUT | **available** as `ws.daito.contour-effects.color.final-grade` |
@@ -101,13 +101,13 @@ The category column uses `EffectCategory` cases. Input names are
 - **Object detection overlay**: `boxes`, `tracks`, `hud`
 - **Depth overlay**: `map`, `contours`, `mesh`, `field`, `orbitCube`, `orbitPrimitives`, `tripleOrbit`, `wrapRibbon`, `silhouetteTunnel`, `particleHalo`, `plexusVolume`, `shardSwarm`, `depthRain`, `fluidSheet`, `volumetricBeams`
 - **Person cutout**: `silhouette`, `boxes`, `depthAndYOLO`, `fingerRectangles`
-- **MECHA 3D model**: `voidCrown`, `prismaticRupture`, `legacyBoth`, `orthogonalLabyrinth`, `sphericalRupture`, `axialRupture`
+- **MECHA 3D model**: `voidCrown`, `prismaticRupture`, `orthogonalLabyrinth`, `sphericalRupture`, `axialRupture`
 - **MECHA material FX**: `chromatic`, `pixelDither`, `vhs`, `holomatrix`, `colorGrade`, `edgeFlow`
 - **Post FX**: `film`, `glitch`, `dataMosh`, `bloom`, `crush`, `flowTrails`, `vectorStreak`, `motionGlitch`, `chromaticAberration`, `chromaticDisplacement`, `pixelDither`, `vhs`, `holomatrix`, `kaleidoscope`, `radialBlur`, `pixelSort`, `feedbackTunnel`, `slitScan`, `waveWarp`, `ripple`, `mirrorTiles`, `stopMotion`, `lumaFeedback`, `fingerFluid`, `liquidGlassLens`, `opticalCamouflage`, `depthFragment`, `glicMetal`, `scanlineShred`, `flowCodec`, `frameFracture`
 - **Depth fragment style**: `falseColor`, `topographic`, `relief`, `movingSlice`, `refraction`, `posterizedPlanes`, `dither`, `nearSilhouette`
 - **Liquid glass lens shape**: `capsule`, `sphere`, `cube`
 - **Optical camouflage style**: `liquidInvisible`, `mercury`, `prism`, `voronoiCrystal`, `waterCaustic`, `flowThreads`, `impactShockwave`, `pixelPhase`, `dataMoshSkin`, `holographicFilm`, `environmentTunnel`, `silhouetteTunnel`, `bodyFluidWake`, `elasticStress`, `massLensing`, `bodyFluidInnerWake`, `elasticInnerStress`, `bodyFluidGlobalWake`, `elasticGlobalStress`, `microlensBody`, `fresnelLensBody`, `bubbleBody`, `contourPressureJets`, `opticalFlowInk`, `depthStratifiedFluid`, `handVortexGloves`, `skeletonFlowRibbons`, `flowDirectionSpectrum`, `pressureIsobars`, `depthThermalPlumes`, `kineticBodyHeat`, `silhouetteOrbitField`, `silhouetteFluidChamber`, `depthGradientRivers`, `depthEdgeVortexSheets`, `depthSilhouetteInterference`, `silhouetteMagneticFlux`, `silhouettePressureMembrane`, `depthCurlCascade`, `depthIsoCellFlow`, `depthBuoyancyFalls`, `contourReactionCoral`, `silhouetteReactionSkin`, `contourReactionHalo`, `silhouetteMitosisCells`, `reactionFlowWake`, `contourReactionCurvatureSpirals`, `silhouetteReactionSDFLamellae`, `contourReactionExcitableWaves`, `silhouetteReactionCellular`, `contourReactionPhaseInterference`, `contourCollapseBody`, `resonantCrumpledMirrorBody`, `ferrofluidSkeletonField`
-- **Adopted silhouette variant**: `primary`, `secondary`, `tertiary`, `quaternary`, `quinary`
+- **Adopted silhouette mode**: `contourCollapseBody.1`, `contourCollapseBody.2`, `contourCollapseBody.3`, `contourCollapseBody.4`, `resonantCrumpledMirrorBody.1`, `resonantCrumpledMirrorBody.2`, `resonantCrumpledMirrorBody.3`, `ferrofluidSkeletonField.1`, `ferrofluidSkeletonField.2`, `ferrofluidSkeletonField.3`, `ferrofluidSkeletonField.4`
 - **GLIC Metal family**: `legacyBlock`, `lineTear`, `channelShear`, `analogSync`, `mirrorFold`, `edgeEcho`, `bitplaneDither`, `waveWarp`, `posterSolar`
 - **Effect area**: `native`, `fullFrame`, `personSilhouette`, `silhouetteContour`, `cameraEdges`
 - **Final color grade look**: `neutral`, `cinema`, `warmPrint`, `coolPrint`, `reversal`, `bleach`, `night`, `monochrome`
