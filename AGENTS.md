@@ -8,7 +8,9 @@
 - Commit every coherent change after the smallest relevant validation.
 - Keep commits narrow. Do not mix API changes, documentation, generated output,
   or unrelated refactors.
-- Do not amend, squash, reset, push, or create a remote unless explicitly
+- Push every commit to `origin` right after it, without asking. This repository
+  is public: check first that the commit holds nothing private.
+- Do not amend, squash, reset, or create another remote unless explicitly
   requested.
 - Review `git diff --check` and `git status --short` before committing.
 
